@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>ًWelcome to Saudi Arabia !</title>
+    {% endblock %}
+</head>
+<body>
+    <style>
+        body{
+            background-color: rgb(97, 168, 97);
+        }
+
+        h2{
+    color: white;
+    size: 15cm;
+           }
+    
+    </style>
+    {% block content %}
+    
+    <h1>Saudi Arabia is a beautiful country known for being one of the most prominent tourist destinations in the Middle East.</h1>
+    <p>Saudi Arabia is the second biggest tourist destination in the Middle East with over 16 million visiting in 2017. Although most tourism in Saudi Arabia still largely involves religious pilgrimages, there is growth in the leisure tourism sector. As the tourism sector has been largely boosted lately, the sector is expected to be the white oil for Saudi Arabia. This is proved as tourism sector is expected to generate $25 billion in 2019. Potential tourist areas include the Hijaz and Sarawat Mountains, Red Sea diving and a number of ancient ruins.</p>
+
+    <img src="{% static 'image/saudi.jpg' %}" style=" padding: 30px;"/>
+    {% endblock %}
+
+</body>
+</html>
