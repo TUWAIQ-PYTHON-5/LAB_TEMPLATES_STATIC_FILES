@@ -1,6 +1,6 @@
 
 {% extends 'main/base.html' %}
-{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +12,7 @@
     {% endblock %}
 </head>
 <body>
+    {% load static %}
     {% block content %}
     
     <h2>Riyadh is the capital of Saudi Arabia, a country in the Middle East. It is the largest city in Saudi Arabia.</h2>
@@ -24,13 +25,13 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="{% static 'image/Riyadh.jpeg' %}" style="padding: 50px;" class="d-block w-100" alt="Riyadh" >
+            <img src="{% static 'image/Riyadh.jpeg' %}" style="padding: 50px; " class="d-block w-100 carousel-control-width:15%;" alt="Riyadh" >
           </div>
           <div class="carousel-item">
-            <img src="{% static 'image/Riyadh2.jpeg' %}" style="padding: 50px;" class="d-block w-100" alt="Riyadh" >
+            <img src="{% static 'image/Riyadh2.jpeg' %}" style="padding: 50px;" class="d-block w-100 carousel-control-width:15%;" alt="Riyadh" >
           </div>
           <div class="carousel-item">
-            <img src="{% static 'image/Riyadh5.jpeg' %}" style="padding: 50px;" class="d-block w-100" alt="Riyadh" >
+            <img src="{% static 'image/Riyadh5.jpeg' %}" style="padding: 50px;" class="d-block w-100 carousel-control-width: 15%" alt="Riyadh" >
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -43,9 +44,10 @@
         </button>
       </div>
     </div>
-      
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 </body>
-    
+
     {% endblock %}
 
 </html>
