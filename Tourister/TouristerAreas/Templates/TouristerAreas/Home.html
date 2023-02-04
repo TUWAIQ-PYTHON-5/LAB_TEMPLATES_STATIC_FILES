@@ -1,65 +1,198 @@
-    {%load static%}
-    <!doctype html>
-    <html lang="en">
-        <head>
-    <head>
-          <meta charset="UTF-8">
-          <meta http-equiv="X-UA-Compatible" content="IE=edge">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-      </head>
-    
-        </head>
-    
-        <body>
-            <style>
-                body{
-                    background-color: rgb(25, 202, 143);
-                }
-            </style>
-            {% bloke content %}
-              
-              <div class="card text-center mb-3" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Home</h5>
-                  <p class="card-text">Welcome to Saudi Arabia</p>
-                  <a href="http://127.0.0.1:8000/Home/" class="btn btn-primary">Go</a>
-                </div>
-              </div>
-              
-              <div class="card text-end" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Riyadh</h5>
-                  <p class="card-text">Riyadh is the capital of the Kingdom of Saudi Arabia, its largest city and the third largest Arab capital in terms of population</p>
-                  <a href="http://127.0.0.1:8000/Riyadh/" class="btn btn-primary">Go</a>
-                </div>
-              </div>
-               
-              
-              <div class="card mb-3" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Mekkah</h5>
-                  <p class="card-text">Makkah Al-Mukarramah is the holiest city for Muslims, it contains the Grand Mosque, and the Kaaba, which is the kiss of Muslims in their prayers</p>
-                  <a href="http://127.0.0.1:8000/Mekkah" class="btn btn-primary">Go</a>
-                </div>
-              </div>
+{% load static %}
+<!doctype html>
+<html lang="en">
 
-              <div class="card text-center mb-3" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">AlUla</h5>
-                  <p class="card-text">The Kingdom of Saudi Arabia, located northwest of the Kingdom, and administratively affiliated to the Emirate of Medina</p>
-                  <a href="http://127.0.0.1:8000/AlUla/" class="btn btn-primary">Go</a>
-                </div>
-              </div>
+<head>
 
-              <div class="card text-center mb-3" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Abah</h5>
-                  <p class="card-text">The city of Abha is the administrative headquarters and capital of the Asir region, southwest of the Kingdom of Saudi Arabia</p>
-                  <a href="http://127.0.0.1:8000/Abha/" class="btn btn-primary">Go</a>
-                </div>
-              </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+      body {
+        background-color: rgb(7, 103, 71);
 
-              {% endblock %}
-        </body>
-    </html>
+      }
+
+      .cart-text2 {
+        font-size: 13px;
+      }
+
+      .light-mode-button {
+        background: 0;
+        border: 0;
+        box-sizing: border-box;
+        cursor: pointer;
+        height: 40px;
+        width: 100px;
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0);
+        margin-top: 20px;
+      }
+
+      .light-mode-button:focus {
+        outline: none;
+        /* Not ideal for accessibility */
+      }
+
+      .light-mode-button span:nth-child(1) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #d6d7db;
+        box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
+        transition: 0.3s;
+      }
+
+      .light-mode-button span:nth-child(2) {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 30px;
+        height: 30px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
+        transition: 0.3s;
+      }
+
+      body[light-mode="dark"] {
+        background-color: #141516;
+      }
+
+      body[light-mode="dark"] .light-mode-button span:nth-child(1) {
+        background-color: #ced4e2;
+        color: #141516;
+      }
+
+      body[light-mode="dark"] .light-mode-button span:nth-child(2) {
+        left: 65px;
+        background-color: #141516;
+      }
+
+      body[light-mode="dark"] a {
+        color: #141516;
+      }
+    </style>
+  </head>
+
+<body>
+  <button class="light-mode-button" aria-label="Toggle Light Mode" onclick="toggle_light_mode()">
+    <span></span>
+    <span></span>
+  </button>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card text-center mb-3" style=" ">
+          <div class="card-body">
+            <h5 class="card-title">Home</h5>
+            <p class="card-text">Welcome to Saudi Arabia</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+
+        <div class="card text-center" style="">
+          <div class="card-body">
+            <h5 class="card-title">Riyadh</h5>
+            <p class="card-text cart-text2">Riyadh is the capital of the Kingdom of Saudi Arabia, its largest city and
+              the third largest
+              Arab capital in terms of population</p>
+            <a href="http://127.0.0.1:8000/Riyadh/" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="col-md-6">
+        <div class="card  text-center mb-3" style=" ">
+          <div class="card-body">
+            <h5 class="card-title">Mekkah</h5>
+            <p class="card-text cart-text2">Makkah Al-Mukarramah is the holiest city for Muslims, it contains the Grand
+              Mosque, and the
+              Kaaba, which is the kiss of Muslims in their prayers</p>
+            <a href="http://127.0.0.1:8000/Mekkah" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+
+        <div class="card text-center mb-3" style=" ">
+          <div class="card-body">
+            <h5 class="card-title">AlUla</h5>
+            <p class="card-text cart-text2">The Kingdom of Saudi Arabia, located northwest of the Kingdom, and
+              administratively
+              affiliated to the Emirate of Medina</p>
+            <a href="http://127.0.0.1:8000/AlUla/" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card text-center mb-3" style="  ">
+          <div class="card-body">
+            <h5 class="card-title">Abah</h5>
+            <p class="card-text cart-text2">The city of Abha is the administrative headquarters and capital of the Asir
+              region, southwest
+              of the Kingdom of Saudi Arabia</p>
+            <a href="http://127.0.0.1:8000/Abha/" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script>
+    var app = document.getElementsByTagName("BODY")[0];
+    if (localStorage.lightMode == "dark") {
+      app.setAttribute("light-mode", "dark");
+    }
+
+    function toggle_light_mode() {
+      var app = document.getElementsByTagName("BODY")[0];
+      if (localStorage.lightMode == "dark") {
+        localStorage.lightMode = "light";
+        app.setAttribute("light-mode", "light");
+      } else {
+        localStorage.lightMode = "dark";
+        app.setAttribute("light-mode", "dark");
+      }
+    }
+
+    window.addEventListener(
+      "storage",
+      function () {
+        if (localStorage.lightMode == "dark") {
+          app.setAttribute("light-mode", "dark");
+        } else {
+          app.setAttribute("light-mode", "light");
+        }
+      },
+      false
+    );
+
+  </script>
+</body>
+
+</html>
+
+</body>
+
+</html>
