@@ -8,7 +8,6 @@ def home_page(request : HttpRequest):
     return render(request , "main/home.html")
 
 
-
 def riyadh_page(request : HttpRequest):
    
     return render(request , "main/riyadh.html")
